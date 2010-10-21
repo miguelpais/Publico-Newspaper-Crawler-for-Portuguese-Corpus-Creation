@@ -21,6 +21,12 @@ h2. Corpus details
 
 The news are added to the corpus text file exactly as they were on the news page, only without html tags inside. First line of paragraphs may add extra spaces to the beginning of the line on the corpus file.
 
+h2. Running
+
+Keep in mind that the script may potentially "never" end.
+
+It can get approximately 1MB of text in 1 minute.
+
 __________
 
 *Hope this script may be useful*
