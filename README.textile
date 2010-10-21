@@ -1,25 +1,27 @@
 h1. Publico Newspaper Crawler for Portuguese corpus creation
 
-The aim of this Ruby script is to crawl the "portuguese Publico newspaper":http://publico.pt getting all the news available from the start page, extract their text, and from those their links to more news.
+The aim of this Ruby script is to crawl the "portuguese Publico newspaper":http://publico.pt getting all the news available from the start page, extracting their text, and from those get their links to even more news.
 
-h2. Dependencies
+h2. Dependencies/Requirements
 
 * Hpricot
 * Curb
+* Ruby 1.9.2. (will definitely work on other versions, but was developed on this one)
 
 h2. Technical Details
 
 The script uses a queue and a set for keeping record of the news links to process and the ones already processed, respectively.
 
-Processing the news links will be 15 threads opening http connections to them, extracting the news text (cleaning potential html tags inside), and getting some more links to news to add to add to the queue.
+Processing the news links will be 15 threads. They will open http connections to them, extract the news text (cleaning potential html tags inside), and get some more links to news to add to the queue.
 
 The script is made in a way that if it, for whatever reason, processes all the links, the current set will be serialized, so that when you run the script again only new links will be processed.
 
+
 h2. Corpus details
 
-The news are added to the corpus text file exactly as they were on the news page, only without html tags inside. First line of paragraphs may add extra spaces to the beginning of the line.
+The news are added to the corpus text file exactly as they were on the news page, only without html tags inside. First line of paragraphs may add extra spaces to the beginning of the line on the corpus file.
 
 __________
 
 *Hope this script may be useful*
-*Feel free to fork it**
+*Feel free to fork it*
